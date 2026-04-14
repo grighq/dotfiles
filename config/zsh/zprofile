@@ -1,0 +1,4 @@
+# Start niri-session
+if [[ -z $WAYLAND_DISPLAY && $XDG_VTNR -eq 1 && $- == *i* ]]; then
+  exec niri-session
+fi

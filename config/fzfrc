@@ -1,0 +1,27 @@
+  -m
+  --ansi
+  --height=50%
+  --prompt=" "
+  --marker=" "
+  --pointer=" "
+  --layout=reverse
+  --border="rounded"
+  --info=inline-right
+  --color=bg:#1f2335
+  --color=fg:#c0caf5
+  --color=hl:#589ed7
+  --color=hl+:#589ed7
+  --color=fg+:#c0caf5
+  --color=info:#589ed7
+  --color=query:#c0caf5
+  --color="bg+:-1,bg:-1"
+  --color=border:#589ed7
+  --color=gutter:#1f2335
+  --color=header:#ff9e64
+  --color=marker:#ff007c
+  --color=prompt:#589ed7
+  --color=pointer:#589ed7
+  --color=spinner:#ff007c
+  --color=scrollbar:#1f2335
+  --color=separator:#ff9e64
+  --bind "tab:down,shift-tab:up,ctrl-space:toggle"

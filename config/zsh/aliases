@@ -1,0 +1,20 @@
+alias q='exit'
+alias v='nvim'
+alias ..='cd ..'
+alias upgrade='yay -Syu'
+
+if command -v lsd &> /dev/null; then
+    alias ls='lsd'
+    alias ll='ls -l'
+    alias la='ls -a'
+    alias lla='ls -la'
+else
+    alias ls='ls --color=auto'
+    alias ll='ls -alF'
+    alias la='ls -A'
+    alias l='ls -l'
+fi
+
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
