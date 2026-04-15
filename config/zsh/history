@@ -2312,3 +2312,14 @@ q
 : 1776256573:0;v
 : 1776256595:0;git status
 : 1776256661:0;git add .
+: 1776256669:0;git status
+: 1776256719:0;git commit -m "Add git config"
+: 1776256727:0;git push -u origin master
+: 1776256836:0;v
+: 1776256858:0;git reset config/niri/dms/alttab.kdl config/niri/dms/colors.kdl config/niri/dms/cursor.kdl config/niri/dms/layout.kdl config/niri/dms/wpblur.kdl
+: 1776256868:0;git status
+: 1776256883:0;git push -u origin master
+: 1776256902:0;git status
+: 1776257060:0;git rm --cached config/niri/dms/alttab.kdl config/niri/dms/colors.kdl config/niri/dms/cursor.kdl config/niri/dms/layout.kdl config/niri/dms/wpblur.kdl
+: 1776257064:0;git status
+: 1776257071:0;git add .
