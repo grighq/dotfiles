@@ -127,6 +127,5 @@ binds {
     Mod+T hotkey-overlay-title="Open Terminal" { spawn "ghostty"; }
     Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
     Mod+Shift+Slash { show-hotkey-overlay; }
-    Mod+Tab repeat=false { toggle-overview; }
     Super+Return repeat=false { toggle-overview; }
 }

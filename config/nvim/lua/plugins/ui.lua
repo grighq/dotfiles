@@ -12,7 +12,17 @@ require("tokyonight").setup({
 		}
 		hl.MsgSeparator = {
 			bg = c.none,
-			fg = c.blue,
+			fg = c.yellow,
+			bold = true,
+		}
+		hl.StatusLine = {
+			bg = c.none,
+			fg = c.yellow,
+			bold = true,
+		}
+		hl.StatusLineNC = {
+			bg = c.none,
+			fg = c.yellow,
 			bold = true,
 		}
 		hl.BlinkCmpGhostText = {

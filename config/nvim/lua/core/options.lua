@@ -1,6 +1,15 @@
 local g = vim.g
 local o = vim.opt
 
+-- Add more git filetypes
+vim.filetype.add({
+	pattern = {
+		[".*/git/config"] = "gitconfig",
+		[".*/git/ignore"] = "gitignore",
+		[".*/git/attributes"] = "gitattributes",
+	},
+})
+
 -- Enable/disable builtin modules/plugins/providers
 g.loaded_netrw = 1
 g.loaded_netrwPlugin = 1
@@ -20,8 +29,9 @@ o.showtabline = 0
 o.cursorline = true
 o.termguicolors = true
 o.shortmess:append("I")
-vim.o.winborder = "rounded"
-o.fillchars = { eob = " ", msgsep = "~" }
+o.winborder = "rounded"
+o.statusline = "%#StatusLine#%=" .. string.rep("~", 1) .. "%="
+o.fillchars = { eob = " ", msgsep = "~", stl = "~", stlnc = "~" }
 
 -- Editor
 o.mouse = "nv"

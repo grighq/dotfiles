@@ -1,10 +1,10 @@
 local autocmd = vim.api.nvim_create_autocmd
-local usercmd = vim.api.nvim_create_user_command
+-- local usercmd = vim.api.nvim_create_user_command
 local function augroup(name)
 	return vim.api.nvim_create_augroup("griga_" .. name, { clear = true })
 end
 
--- Disable new comment line with o, O
+-- Disable new comment line with "o", "O"
 autocmd("BufWinEnter", {
 	group = augroup("disable_new_comment_line"),
 	callback = function()
@@ -12,13 +12,14 @@ autocmd("BufWinEnter", {
 	end,
 })
 
--- Close some filetypes with <q>
+-- Close some filetypes with "q"
 autocmd("FileType", {
 	group = augroup("close_with_q"),
 	pattern = {
 		"qf",
 		"help",
 		"dbout",
+		"config",
 		"notify",
 		"lspinfo",
 		"nvim-pack",
@@ -44,11 +45,13 @@ autocmd("FileType", {
 	end,
 })
 
--- Close command history with "q"
+-- Comfortable cmdwin(close with "q" and disable line numbers)
 autocmd("CmdwinEnter", {
-	group = augroup("close_with_q"),
+	group = augroup("comfortable_cmdwin"),
 	pattern = "*",
 	callback = function(event)
+		vim.opt_local.number = false
+		vim.opt_local.relativenumber = false
 		vim.schedule(function()
 			vim.keymap.set("n", "q", "<cmd>quit<CR>", {
 				buffer = event.buf,
@@ -59,7 +62,7 @@ autocmd("CmdwinEnter", {
 	end,
 })
 
--- Open help and man in vsplit
+-- Open help/man in vsplit
 autocmd("FileType", {
 	group = augroup("open_help_in_vsplit"),
 	pattern = { "help", "man" },
@@ -75,3 +78,13 @@ autocmd("TextYankPost", {
 		(vim.hl or vim.highlight).on_yank()
 	end,
 })
+
+-- Disable line numbers for some filetypes
+-- autocmd("FileType", {
+-- 	group = augroup("disable_numbers"),
+-- 	pattern = { "nvim-undotree", "diff" },
+-- 	callback = function()
+-- 		vim.opt_local.number = false
+-- 		vim.opt_local.relativenumber = false
+-- 	end,
+-- })

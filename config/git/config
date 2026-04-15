@@ -1,0 +1,13 @@
+[include]
+  path = .config
+[init]
+	defaultBranch = master
+[core]
+	pager = cat
+[fetch]
+  prune = true
+[push]
+  autoSetupRemote = true
+  default = current
+[help]
+  autocorrect = 20

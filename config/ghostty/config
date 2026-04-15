@@ -31,9 +31,17 @@ keybind = clear
 
 # Use shift+space as prefix for most ghostty commands
 keybind = shift+space>t=new_tab
+keybind = shift+space>q=close_surface
 keybind = shift+space>w=close_tab:this
-keybind = shift+space>q=quit
 keybind = shift+space>v=paste_from_clipboard
+
+keybind = shift+space>ctrl+v=new_split:right
+keybind = shift+space>ctrl+s=new_split:down
+keybind = shift+space>ctrl+j=goto_split:down
+keybind = shift+space>ctrl+k=goto_split:up
+keybind = shift+space>ctrl+l=goto_split:right
+keybind = shift+space>ctrl+h=goto_split:left
+
 
 keybind = ctrl+tab=next_tab
 keybind = ctrl+shift+tab=previous_tab
@@ -46,7 +54,7 @@ keybind = shift+space>f=start_search
 keybind = shift+space>r=reload_config
 
 
-# Open scroll buffer in nvim. Disable this when fixed write_screen_file:open,plain
+# Open scroll file in nvim. Disable this when fixed write_screen_file:open,plain
 keybind = shift+space>[=text:v\x20
 keybind = chain=write_screen_file:paste,plain
 keybind = chain=text:\r

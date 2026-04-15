@@ -176,7 +176,6 @@ echo $XDG_CACHE_HOME
 shutdown -h
 shutdown -c
 la .zshenv
-echo $XDG_CONFIG_HOME
 nvim .config/uwsm/env
 mv .zshenv .config/zsh
 source .config/uwsm/env
@@ -361,7 +360,6 @@ cat config.json
 rm config.json
 mv ~/.local/share/fonts/Fedora-COSMIC-Live-42-1.1.x86_64.iso .
 ghostty +list-fonts | rg Maple
-cd con
 rm -rf fontconfig
 fc-cache -fv
 v .config/fontconfig/conf.d/10-monospace.conf
@@ -1178,7 +1176,6 @@ zig build --release=fast
 cd .local/share/src/zig
 ./zig -h
 cd zig
-ls -la
 zig -h
 zig build -h\
 zig build -Doptimize=ReleaseFast
@@ -1221,7 +1218,6 @@ la share/nvim
 e ../zsh/.zshrc
 v ../zsh/.zshrc
 nv config
-cd nir
 nv config.kdl
 ghostty +validate-config
 ghostty env GTK_DEBUG=interactive ghostty
@@ -1495,7 +1491,6 @@ rm -rf alacritty
 rm -rf tmux
 rm -rf television
 cd ../dotfiles
-la applications
 v $(grep $(fzf))
 �
 󰃸�
@@ -1568,7 +1563,6 @@ mv ~/Downloads/minimal.lua .
 v minimal.lua
 nvim --clean -u minimal.lua
 v lua/core/options.lua
-rm test
 cd $(fzf)
 z $(fzf)
 cd | fzf
@@ -1577,7 +1571,6 @@ cd yay
 adguardvpn-cli site-exclusions show
 ghostty +list-actions | fzf
 ghostty +list-actions | grep -i "overview\|window\|tab"
-v .gitconfig
 mv .cursor .local/share/cursor
 la .local/share/cursor
 cd ~/.config
@@ -1600,7 +1593,6 @@ cursor -h
 mv .local/share/cursor ~/.cursor
 v cursor.desktop
 update-desktop-database ~/.local/share/applications
-la .config
 la .cursor
 rm -rf .cursor
 pacman -Qs dms-shell
@@ -1824,10 +1816,8 @@ dms doctor
 v .zlogin
 nir
 ad
-poweroff
 cat .zprofile
 tail -50 /tmp/systemd-private-6d11313de6964a1b8b35b43bb8804194-systemd-logind.service-v0Q6Df
-adguardvpn-cli connect -f
 v Downloads/.zprofile
 echo $XDG_RUNTIME_DIR
 journalctl --user -u niri.service
@@ -1839,7 +1829,6 @@ la completions
 rm completions/*
 rm -rf completions
 cp .zshrc ~/Downloads
-cat .zshrc
 echo $SHELL
 echo $SHLVL
 echo $XDG_VTNR
@@ -1857,10 +1846,8 @@ echo $BUN_INSTALL
 v .zprofile
 ffffffff
 anothertest
-cd zsh
 source .zshrc
 sdsfdsdf dsdf
-v .zshrc
 v ghostty/config
 rm -rf ghostty
 mkdir config
@@ -1889,7 +1876,6 @@ yay -Si cosmic-files
 cat .Xresources
 rm .Xresources .Xresources.backup1775900029 .Xresources.backup1775900030 .Xresources.backup1775900031 .Xresources.backup1775900032
 la Projects
-cat user-dirs.dirs
 cat xdg-terminals.list
 la cosmic
 dms -h
@@ -2098,7 +2084,6 @@ ghostty +show-config | grep accent
 ghostty +show-config
 cd Pictures/Screenshots
 xdg-open | fzf
-xdg-open $(fzf)
 xdg-open Screenshot\ from\ 2026-04-11\ 23-02-15.png
 whereis ghostty
 cd /usr/share/ghostty/themes
@@ -2106,7 +2091,6 @@ v TokyoNight\ Moon
 ghostty +list-themes
 env GTK_DEBUG=interactive ghostty
 cd niri
-v config.kdl
 cp custom.css ~/Downloads
 la ~/Downloads
 la def
@@ -2132,7 +2116,6 @@ mv ghostyy.css ghostty.css
 v starship.toml
 nvim
 printf "\033]9;4;3\033\\"
-cd dot
 cd config/nvim/lua/plugins
 cd Templates
 mkdir test
@@ -2154,7 +2137,6 @@ ls .Trash-1000
 ls .Trash-1000/files/lost+found
 cd usb
 cd /
-ls
 cd /mnt
 sudo mount /dev/sda usb
 la usb
@@ -2166,13 +2148,11 @@ cd Downloads
 v lsp.lua
 v lua/plugins/lsp.lua
 v lua/plugins/manager.lua
-v config
 rm lsp.lua lsp\ \(1\).lua
 rm gopls.lua
 cd gho
 n ghostty.css
 npm -v
-cd ghos
 v ghostty.css
 adguardvpn-cli status
 adguardvpn-cli connect -l Amsterdam
@@ -2180,25 +2160,12 @@ rm .zprofile .zshrc colorshemes.lua
 v codelens.md
 v blink.lua
 rm blink.lua
-npm install -g @mariozechner/pi-coding-agent
-pi
-cd neovim
-git fetch
-git status
-git pull
-zig build -Doptimize=ReleaseFast install --prefix ~/.local
 cd te
-flatpak update
 flatpak uninstall --unused
-upgrade
-adguardvpn-cli disconnect
-v .zshenv
-adguardvpn-cli list-locations 10
 adguardvpn-cli connect -l Frankfurt
 cd down
 v wed_apr_08_2026_проблема_с_стилу�ми_в_кону�игу�рау�ии.md
 cd temp
-cd nvim
 cd lua
 cd lua/core
 touch init.lua
@@ -2211,109 +2178,137 @@ cd test
 mv blink.lua conform.lua fzf.lua textobjects.lua tokyonight.lua which-key.lua ~/Downloads
 v init.lua
 v main.go
-..
 v plugins/init.lua
-v
 cd conf
-v fzfrc
 cd .var
 cd app
 cd org.keepassxc.KeePassXC
 v $(fzf)
-la
 cd /usr/share/applications
 cd shar
 cd flatpak
-l
 fzf
 l db
 l repo
 flatpak override --user --env=QT_QPA_PLATFORM=xcb org.keepassxc.KeePassXC
 flatpak override --user --socket=x11 org.keepassxc.KeePassXC\
 cd
+cat init.lua
+ghostty +show-config --default
+ghostty +show-config --default | rg font-feature
+flatpak run --command=keepassxc-cli org.keepassxc.KeePassXC
+cat .zshrc
+source ~/.zshenv .zshrc
+npm install -g @mariozechner/pi-coding-agent
+v .zcompdump
+pi
+cp history hist
+sed -i '/^[[:space:]]*$/d' ./hist
+v hist
+rm hist
+sed -i '/^[[:space:]]*$/d' ./history
+v history
+la applications
+rm applications
+mv nvim ~/Templates
+la config
+cd config
+cat user-dirs.dirs
+rm user-dirs.dirs
+rmdir applications
+la misc
+cd con
+ls -la
+la Kitware
+git init
+git config --global init.defaultBranch master
+git add .gitignore
+git commit -m "Add .gitignore"
+cd nir
+ls dms
+v config.kdl
+cd zsh
+v .zshrc
+git reset config/nvim/nvim-pack-lock.json
+touch README.md
+git add .
+git commit -m "Add README.md"
+v .zshenv
+git remote add origin git@github.com:grighq/dotfiles.git
+git push -u origin master
+mkdir .config/git
+mv .gitconfig .config/git/config
+cat .config/git/config
+git config --list --show-origin
+v /tmp/0ZKnWLLVWhUyAGHLWEYChg/screen.txt
+git config --global
+git config --global core.pager cat
+echo $XDG_CONFIG_HOME
+cd .config/git
+v .config
+git config --global --list --show-origin
+mv .config/git .local/share/dotfiles/config
+la .config
+ln -s ~/.local/share/dotfiles/config/git ~/.config
+cd dot
+v .gitignore
+flatpak update
+cd .pki
+ls
+cd nssdb
+cat pkcs11.txt
+l .ssh
+cp config ~/.gitconfig
+v .gitconfig
+rm .gitconfig
+cd git
+git status
+git pull
+zig build -Doptimize=ReleaseFast install --prefix ~/.local
+upgrade
+poweroff
+adguardvpn-cli list-locations 10
+cd neovim
+git fetch
+cd
+cd ghos
+v config
+cd nvim
+v lua/plugins/ui.lua
+..
+rg incr | fzf
+rg r | fzf
+la
+v test
+v fzfrc
+rg q | fzf
+rm test
+adguardvpn-cli disconnect
+adguardvpn-cli connect -f
+la DankMaterialShell
+la DankMaterialShell/plugins
+cd niri/dms
+v
+cd scr
+l
+xdg-open $(fzf)
+xdg-open Screenshot\ from\ 2026-04-15\ 15-20-20.png
 q
-: 1776161046:0;cd nvim
-: 1776161048:0;l
-: 1776161056:0;cat init.lua
-: 1776161061:0;v
-: 1776168225:0;ghostty +show-config --default
-: 1776168256:0;ghostty +show-config --default | rg font-feature
-: 1776168386:0;v
-: 1776170605:0;flatpak run --command=keepassxc-cli org.keepassxc.KeePassXC
-: 1776171708:0;cd zsh
-: 1776171714:0;la
-: 1776171942:0;l
-: 1776171955:0;cat .zshrc
-: 1776171974:0;v .zshrc
-: 1776172043:0;source ~/.zshenv .zshrc
-: 1776172062:0;pi
-: 1776172080:0;npm install -g @mariozechner/pi-coding-agent
-: 1776172099:0;pi
-: 1776172119:0;l
-: 1776172123:0;v history
-: 1776172192:0;l
-: 1776172197:0;la
-: 1776172206:0;v .zcompdump
-: 1776172232:0;pi
-: 1776172623:0;cd zsh
-: 1776172625:0;l
-: 1776172627:0;v history
-: 1776173216:0;la
-: 1776173220:0;v .zshrc
-: 1776173462:0;v history
-: 1776173485:0;cp history hist
-: 1776173508:0;sed -i '/^[[:space:]]*$/d' ./hist
-: 1776173511:0;v hist
-: 1776173530:0;rm hist
-: 1776173536:0;sed -i '/^[[:space:]]*$/d' ./history
-: 1776173539:0;v history
-: 1776173564:0;cd dot
-: 1776173566:0;l
-: 1776173567:0;la
-: 1776173571:0;la applications
-: 1776173575:0;rm applications
-: 1776173582:0;la config
-: 1776173595:0;mv nvim ~/Templates
-: 1776173597:0;la
-: 1776173603:0;la config
-: 1776173616:0;cd config
-: 1776173618:0;cat user-dirs.dirs
-: 1776173627:0;rm user-dirs.dirs
-: 1776173628:0;la
-: 1776173636:0;..
-: 1776173637:0;la
-: 1776173647:0;rmdir applications
-: 1776173648:0;la
-: 1776173652:0;la misc
-: 1776173661:0;cd con
-: 1776173662:0;la
-: 1776173668:0;ls -la
-: 1776173694:0;la Kitware
-: 1776173710:0;la DankMaterialShell
-: 1776173737:0;git init
-: 1776173766:0;git config --global init.defaultBranch master
-: 1776173772:0;git status
-: 1776173857:0;v .gitignore
-: 1776173973:0;l
-: 1776173975:0;la
-: 1776174002:0;git add .gitignore
-: 1776174032:0;git commit -m "Add .gitignore"
-: 1776174036:0;git status
-: 1776174048:0;cd nir
-: 1776174049:0;l
-: 1776174051:0;la
-: 1776174055:0;ls dms
-: 1776174070:0;v config.kdl
-: 1776174200:0;git add .
-: 1776174205:0;git status
-: 1776174259:0;cd zsh
-: 1776174262:0;v .zshrc
-: 1776174366:0;v .gitignore
-: 1776174463:0;git reset config/nvim/nvim-pack-lock.json
-: 1776174468:0;git status
-: 1776174494:0;git add .
-: 1776174498:0;git status
-: 1776174896:0;touch README.md
-: 1776174898:0;la
-: 1776174927:0;git status
-: 1776174933:0;git add .
+: 1776255847:0;cd dms
+: 1776255849:0;l
+: 1776255852:0;v binds.kdl
+: 1776256089:0;cd dot
+: 1776256092:0;la
+: 1776256102:0;v .gitignore
+: 1776256246:0;cd config/niri/dms
+: 1776256247:0;l
+: 1776256280:0;v /tmp/blqU_gTDLEQmyzn3JlGFPA/screen.txt
+: 1776256329:0;cd ghos
+: 1776256333:0;cat config
+: 1776256516:0;cd dms
+: 1776256519:0;v
+: 1776256559:0;fzf --preview
+: 1776256563:0;fzf --preview=cat
+: 1776256573:0;v
+: 1776256595:0;git status
+: 1776256661:0;git add .
