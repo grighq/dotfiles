@@ -204,11 +204,13 @@ animations {
 // Work around WezTerm's initial configure bug
 // by setting an empty default-column-width.
 window-rule {
-    match app-id="com.mitchellh.ghostty"
-    match app-id="org.telegram.desktop"
     match app-id="cursor"
-    match app-id="google-chrome"
+    match app-id="obsidian"
     match app-id="Alacritty"
+    match app-id="google-chrome"
+    // match app-id="org.gnome.Nautilus"
+    match app-id="org.telegram.desktop"
+    match app-id="com.mitchellh.ghostty"
     open-maximized true
 }
 window-rule {
