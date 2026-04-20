@@ -96,6 +96,9 @@ if [[ "$TERM_PROGRAM" == 'ghostty' ]]; then
     bindkey -M viins "^[[27;5;13~" autosuggest-execute
 fi
 
+# Env ssh with gcr
+export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/gcr/ssh"
+
 # Plugins
 source '/usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh'
 source '/usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh'
