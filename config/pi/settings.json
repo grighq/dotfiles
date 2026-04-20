@@ -1,0 +1,11 @@
+{
+  "lastChangelogVersion": "0.67.68",
+  "defaultProvider": "nvidia-nim",
+  "defaultModel": "moonshotai/kimi-k2.5",
+  "defaultThinkingLevel": "medium",
+  "hideThinkingBlock": false,
+  "packages": [
+    "git:github.com/xRyul/pi-nvidia-nim"
+  ],
+  "theme": "Tokyo Night Moon"
+}
