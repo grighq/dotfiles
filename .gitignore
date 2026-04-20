@@ -6,3 +6,5 @@ config/niri/dms/cursor.kdl
 config/niri/dms/layout.kdl
 config/niri/dms/wpblur.kdl
 config/nvim/nvim-pack-lock.json
+config/pi/git
+config/pi/sessions
