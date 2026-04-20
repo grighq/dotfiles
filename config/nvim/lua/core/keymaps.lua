@@ -3,10 +3,10 @@ local map = vim.keymap.set
 vim.g.mapleader = " "
 vim.g.localmapleader = " "
 
---- Smart selection with builtin incremental selection(treesitter or lsp)
-local function smart_select(direction)
+-- Builtin incremental selection with <cr> and <bs>
+local function inc_select(direction)
 	if vim.fn.getcmdwintype() ~= "" or vim.bo.buftype ~= "" then
-		local key = direction == "parent" and "<CR>" or "<BS>"
+		local key = direction == "parent" and "<cr>" or "<bs>"
 		local feed = vim.api.nvim_replace_termcodes(key, true, false, true)
 		vim.api.nvim_feedkeys(feed, "n", false)
 		return
@@ -34,10 +34,10 @@ local function smart_select(direction)
 end
 
 map({ "n", "x", "o" }, "<cr>", function()
-	smart_select("parent")
+	inc_select("parent")
 end, { desc = "Incremental parent selection" })
 map({ "n", "x", "o" }, "<bs>", function()
-	smart_select("child")
+	inc_select("child")
 end, { desc = "Incremental child selection" })
 
 -- Vi style for commandline with <ctrl> prefix
@@ -60,7 +60,7 @@ map("n", "<c-p>", "<c-w>p")
 map({ "i", "x", "n", "s" }, "<c-s>", "<cmd>w<cr><esc>")
 
 -- Terminal mode navigation
-map("t", "<esc>", "<c-\\><c-n>")
+map("t", "<c-esc>", "<c-\\><c-n>")
 map("t", "<c-h>", "<c-\\><c-n><c-w>h")
 map("t", "<c-j>", "<c-\\><c-n><c-w>j")
 map("t", "<c-k>", "<c-\\><c-n><c-w>k")

@@ -4,7 +4,7 @@ local function augroup(name)
 	return vim.api.nvim_create_augroup("griga_" .. name, { clear = true })
 end
 
--- Disable new comment line with "o", "O"
+-- Disable new comment line with <o>, <O>
 autocmd("BufWinEnter", {
 	group = augroup("disable_new_comment_line"),
 	callback = function()
@@ -12,7 +12,7 @@ autocmd("BufWinEnter", {
 	end,
 })
 
--- Close some filetypes with "q"
+-- Close some filetypes with <q>
 autocmd("FileType", {
 	group = augroup("close_with_q"),
 	pattern = {
@@ -45,7 +45,7 @@ autocmd("FileType", {
 	end,
 })
 
--- Comfortable cmdwin(close with "q" and disable line numbers)
+-- Close cmd history with <q> and disable line numbers
 autocmd("CmdwinEnter", {
 	group = augroup("comfortable_cmdwin"),
 	pattern = "*",

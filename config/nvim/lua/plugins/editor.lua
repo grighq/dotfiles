@@ -50,6 +50,10 @@ vim.keymap.set("n", "<leader>so", function()
 	require("fzf-lua").old_files()
 end, { desc = "Old files" })
 
+vim.keymap.set("n", "<leader>sh", function()
+	require("fzf-lua").command_history()
+end, { desc = "Command history" })
+
 -- Which-key
 require("which-key").setup({
 	preset = "helix",
