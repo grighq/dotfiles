@@ -10,8 +10,8 @@ export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 export GOPATH="$HOME/.local/share/go"
 
 # Rust
-# export CARGO_HOME="$XDG_DATA_HOME/cargo"
-# export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
+export CARGO_HOME="$XDG_DATA_HOME/cargo"
+export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
 
 # Bun
 export BUN_INSTALL="$XDG_DATA_HOME/bun"
@@ -28,4 +28,4 @@ export VISUAL=nvim
 export SUDO_EDITOR=nvim
 
 # PATH
-export PATH="$HOME/.local/bin:$GOPATH/bin:$BUN_INSTALL/bin:$XDG_DATA_HOME/src/zig:$PATH"
+export PATH="$HOME/.local/bin:$GOPATH/bin:$BUN_INSTALL/bin:$XDG_DATA_HOME/src/zig:$CARGO_HOME/bin:$PATH"

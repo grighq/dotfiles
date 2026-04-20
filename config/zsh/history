@@ -32,8 +32,6 @@ la .local/share/dots/config/
 mv .config/zsh .local/share/dots/config
 ln -s ~/.local/share/dots/config/zsh ~/.config
 nvim .zshenv
-echo $RUSTUP_HOME
-echo $CARGO_HOME
 nvim .local/share/dots/config/nvim/init.lua
 nvim .local/share/dots/config/nvim/lua/config/options.lua
 ln -s ~/.local/share/dots/config/nvim ~/.config
@@ -162,7 +160,6 @@ ln -s ~/.local/share/dots/config/uwsm ~/.config
 pacman -Ss libnewt
 cat .config/zsh/.zprofile
 time
-la .local/share/cargo
 cp .config/uwsm/env Downloads
 v .local/share/dots/config/uwsm/env
 rm .config/starship.toml
@@ -595,7 +592,6 @@ ping google.com
 rm HotA_1.7.3_full_setup\ \(1\).exe HotA_1.7.3_full_setup.exe Yandex.rpm
 ll
 ./neovide.AppImage --no-multigrid
-v --version
 ./neovide.AppImage --version
 ./neovide.AppImage
 rm neovide.AppImage
@@ -815,7 +811,6 @@ curl -fsSL https://opencode.ai/install | bash
 v .config/zsh/.zshrc
 mkdir .local/bin
 mv .opencode .local/bin
-cd .local/bin
 la .opencode/bin
 mv .opencode/bin/opencode .
 curl -f https://zed.dev/install.sh | ZED_CHANNEL=preview sh
@@ -954,7 +949,6 @@ mv ~/.pi/agent/settings.json ~/.pi/agent/sessions .
 la .pi/agent
 rm -rf .pi
 sudo
-sudo nvim
 cp $(tv files) ~
 rm config
 la cable
@@ -1122,7 +1116,6 @@ la ~
 nv se
 nv settings.json
 rm -rf extensions
-ping ya.ru
 yay -S opencode
 yay -S opencode-bin
 yay -S google-chrome
@@ -1159,7 +1152,6 @@ cd /etc/zsh
 cd /usr/share/zsh
 zig build
 ./zig-out/bin/nvim -v
-cd /usr/local/share
 which luajit
 cd /usr/share/lua
 cd 5.1
@@ -1239,7 +1231,6 @@ yay -Si xdg-desktop-portal-gnome
 yay -Si xdg-desktop-portal-gtk
 cd niri | v config.kdl
 nv init.lua
-adguardvpn-cli connect -l Sweden
 nv
 la /run/user/1000
 asdfads
@@ -1266,7 +1257,6 @@ adguardvpn-cli config -l China
 adguardvpn-cli list-locations | tv
 adguardvpn-cli connect -l $(adguardvpn-cli list-locations | tv)
 adguardvpn-cli connect -l Shanghai
-м
 niri msg
 й
 rm zig-x86_64-linux-0.15.2.tar.xz
@@ -1275,7 +1265,6 @@ sudo chmod +x Cursor
 mv Cursor ~/.local/bin/cursor
 flatpak install flathub it.mijorus.gearlever
 yay -S fuse2
-niri msg windows
 source /tmp/.mount_cursor6pkEQd/usr/share/cursor/resources/app/out/vs/workbench/contrib/terminal/common/scripts/shellIntegration-rc.zsh
 cd loc
 xdg-open $(tv /usr/share/applications/)
@@ -1506,10 +1495,8 @@ v $(grep $(fzf))
 󰤲
 kj
 v .config/starship.toml
-adguardvpn-cli connect -l Denmark
 cd zs
 rm temp.txt
-adguardvpn-cli update
 adguardvpn-cli connect -l Norway
 v .
 source aliases .zshrc ~/.zshenv
@@ -1528,11 +1515,9 @@ adguardvpn-cli connect -l $(adguardvpn-cli list-locations | fzf)
 adguardvpn-cli connect -l Paris
 adguardvpn-cli connect -l Austria
 adguardvpn-cli connect -l Slovakia
-adguardvpn-cli connect -l Finland
 adguardvpn-cli connect -l Bratislava
 adguardvpn-cli connect -l
 adguardvpn-cli connect -l Japan
-adguardvpn-cli connect -l Berlin
 cd nvim/lua/plugins
 nvim --clean
 nvim --clean manager.lua
@@ -1585,7 +1570,6 @@ l .local/share/
 laa
 l .config
 echo $CURSOR_HOME
-la .local/share
 cursor --user-data-dir="$HOME/.local/share/cursor"
 yay cursor
 cursor -v
@@ -1618,7 +1602,6 @@ rm README.md Readme.md
 v /tmp/RkVeeC8ML4btCUZ6w-A-XA/screen.txt
 v animated-gradient-shader.glsl
 v bettercrt.glsl
-cd work
 cd shaders
 mv cursor_warp.glsl ..
 rm ./*
@@ -1633,7 +1616,6 @@ cargo build --release
 la target/release
 rm minimal.lua
 ../../
-../..
 cd lua/blink
 cd site/pack/core
 la fzf-lua
@@ -1738,7 +1720,6 @@ yay -Si dms-shell
 yay -S quickshell
 quickshell -V
 yay -Si wayland-protocols
-yay dms-shell
 quickshell
 yay -Rns $(yay -Qtdq)
 pacman -Qdt
@@ -1793,7 +1774,6 @@ sdf
 sadf
 dms version
 notify-send "hello"
-cd applications
 v chrome-agimnkijcaahngcdmfeangaknmldooml-Default.desktop
 dms greeter
 dms statuc greeter
@@ -1804,22 +1784,18 @@ dms completion
 dms completion zsh
 rm .config/zsh/.zprofile
 which niri-session
-source .zshenv
 niri
 systemctl --user status dms.service
-systemctl --user status niri.service
 exit
 systemctl --user status dms\
 journalctl --user -u dms -n 50
 ls -l ../systemd/user/niri.service.wants/dms.service
-dms doctor
 v .zlogin
 nir
 ad
 cat .zprofile
 tail -50 /tmp/systemd-private-6d11313de6964a1b8b35b43bb8804194-systemd-logind.service-v0Q6Df
 v Downloads/.zprofile
-echo $XDG_RUNTIME_DIR
 journalctl --user -u niri.service
 echo $XDG_CURRENT_DESKTOP
 echo $WAYLAND_DISPLAY
@@ -1839,9 +1815,7 @@ echo $DISPLAY\
 echo $WAYLAND_DISPLAY\
 echo $XDG_CURRENT_DESKTOP\
 echo $XDG_RUNTIME_DIR
-v zprofile
 niri-session
-reboot
 echo $BUN_INSTALL
 v .zprofile
 ffffffff
@@ -2090,7 +2064,6 @@ cd /usr/share/ghostty/themes
 v TokyoNight\ Moon
 ghostty +list-themes
 env GTK_DEBUG=interactive ghostty
-cd niri
 cp custom.css ~/Downloads
 la ~/Downloads
 la def
@@ -2154,7 +2127,6 @@ cd gho
 n ghostty.css
 npm -v
 v ghostty.css
-adguardvpn-cli status
 adguardvpn-cli connect -l Amsterdam
 rm .zprofile .zshrc colorshemes.lua
 v codelens.md
@@ -2163,7 +2135,6 @@ rm blink.lua
 cd te
 flatpak uninstall --unused
 adguardvpn-cli connect -l Frankfurt
-cd down
 v wed_apr_08_2026_проблема_с_стилу�ми_в_кону�игу�рау�ии.md
 cd temp
 cd lua
@@ -2179,13 +2150,9 @@ mv blink.lua conform.lua fzf.lua textobjects.lua tokyonight.lua which-key.lua ~/
 v init.lua
 v main.go
 v plugins/init.lua
-cd conf
 cd .var
-cd app
 cd org.keepassxc.KeePassXC
-v $(fzf)
 cd /usr/share/applications
-cd shar
 cd flatpak
 fzf
 l db
@@ -2201,7 +2168,6 @@ cat .zshrc
 source ~/.zshenv .zshrc
 npm install -g @mariozechner/pi-coding-agent
 v .zcompdump
-pi
 cp history hist
 sed -i '/^[[:space:]]*$/d' ./hist
 v hist
@@ -2217,8 +2183,6 @@ cat user-dirs.dirs
 rm user-dirs.dirs
 rmdir applications
 la misc
-cd con
-ls -la
 la Kitware
 git init
 git config --global init.defaultBranch master
@@ -2226,16 +2190,10 @@ git add .gitignore
 git commit -m "Add .gitignore"
 cd nir
 ls dms
-v config.kdl
-cd zsh
-v .zshrc
 git reset config/nvim/nvim-pack-lock.json
 touch README.md
-git add .
 git commit -m "Add README.md"
-v .zshenv
 git remote add origin git@github.com:grighq/dotfiles.git
-git push -u origin master
 mkdir .config/git
 mv .gitconfig .config/git/config
 cat .config/git/config
@@ -2250,11 +2208,7 @@ git config --global --list --show-origin
 mv .config/git .local/share/dotfiles/config
 la .config
 ln -s ~/.local/share/dotfiles/config/git ~/.config
-cd dot
-v .gitignore
-flatpak update
 cd .pki
-ls
 cd nssdb
 cat pkcs11.txt
 l .ssh
@@ -2262,64 +2216,264 @@ cp config ~/.gitconfig
 v .gitconfig
 rm .gitconfig
 cd git
-git status
-git pull
-zig build -Doptimize=ReleaseFast install --prefix ~/.local
-upgrade
-poweroff
-adguardvpn-cli list-locations 10
-cd neovim
-git fetch
-cd
-cd ghos
 v config
-cd nvim
 v lua/plugins/ui.lua
-..
 rg incr | fzf
 rg r | fzf
-la
-v test
-v fzfrc
 rg q | fzf
 rm test
-adguardvpn-cli disconnect
-adguardvpn-cli connect -f
 la DankMaterialShell
 la DankMaterialShell/plugins
 cd niri/dms
-v
 cd scr
-l
 xdg-open $(fzf)
 xdg-open Screenshot\ from\ 2026-04-15\ 15-20-20.png
+v binds.kdl
+v /tmp/blqU_gTDLEQmyzn3JlGFPA/screen.txt
+cd ghos
+cat config
+cd dms
+fzf --preview
+fzf --preview=cat
+git commit -m "Add git config"
+git reset config/niri/dms/alttab.kdl config/niri/dms/colors.kdl config/niri/dms/cursor.kdl config/niri/dms/layout.kdl config/niri/dms/wpblur.kdl
+git rm --cached config/niri/dms/alttab.kdl config/niri/dms/colors.kdl config/niri/dms/cursor.kdl config/niri/dms/layout.kdl config/niri/dms/wpblur.kdl
+git add .
+git commit -m "Delete autocreated files from dms"
+git push -u origin master
+cd config/niri/dms
+ls -l
+ls -l >(cat)
+v $(fzf)
+v test
+;57R
+adguardvpn-cli connect -l Brussels
+м
+cd nvim
+v .gitignore
+v lua/plugins/editor.lua
+rg a | fzf
+cd con
+rm nvim/test
+v fzfrc
+cd work
+cd .cargo
+cat .global-cache
+la .local/share
+mv .cargo .local/share/cargo
+la .local/share/cargo
+echo $RUSTUP_HOME
+echo $CARGO_HOME
+cd down
+cat conform.lua
+rm blink.lua conform.lua fzf.lua textobjects.lua tokyonight.lua which-key.lua
+la ../.local/bin
+mv Obsidian-1.12.7.AppImage obsidian
+ps aux | grep keyring
+htop
+pacman -Qi gnome-keyring
+pacman -Qs gnome-keyring
+ps aux | grep wallet
+ps aux | grep kde-wallet
+yay wallet
+pacman -Qs kwallet
+pacman -Qi kwallet
+pacman -Qs 'gnome-keyring|kwallet'
+yay gnome-keyring
+niri-msg
+gnome-keyring
+sudo nvim system-login
+sudo v system-login
+sudo nvim
+sudo /home/griga/.local/bin/nvim
+yay niri-portal
+yay xdg-desktop-portal
+la niri
+la niri/dms
+cd /usr/local/share
+dms doctor -v
+secret-tool lookup title "Test"
+yay quickshell-git
+yay libsecret
+cd /usr/local/bin
+v /tmp/LqSbnRZYh8molOCwXNKWRg/screen.txt
+cd /etc/pam.d
+v login
+v system-local-login
+v system-login
+sudo /home/griga/.local/bin/nvim system-login
+v .zshrc
+v /tmp/IDB_0hdsJq8siHmkWeJ6yA/screen.txt
+echo $XDG_RUNTIME_DIR
+yay gcr
+echo $SSH_AUTH_SOCK
+ls /run/user/1000/keyring
+ls /run/user/1000/
+systemctl --user status | rg gcr
+systemctl --user status | rg ssh
+systemctl --user status
+cd applications
+../..
+cd .local/bin
+./obsidian.appimage --password-store=gnome-libsecret
+cd share/applications
+secret-tool lookup title "ObsidianTest"
+secret-tool lookup title "obsidian"
+secret-tool lookup title "obsidianTest"
+v secrets
+obsidian -h
+obsidian help | secrets
+obsidian help | secret
+obsidian help | rg secrets
+obsidian help | rg secret
+obsidian help
+obsidian
+flatpak install flathub org.gnome.seahorse.Application
+obsidian.appimage --password-store=gnome-libsecret
+cd Documents
+../Projects
+cd Projects
+ls -la
+cd .obsidian
+..
+cd shar
+cd conf
+cd obsidian
+v 9b6a1a8004874340.json
+rg os | fzf
+obsidian.appimage --password-store="gnome"
+XDG_CURRENT_DESKTOP=GNOME obsidian.appimage --password-store=gnome-libsecret --enable-features=UseOzonePlatform --ozone-platform=wayland
+v /tmp/cE4vqcZKbofGikiKbRAzYA/screen.txt
+export $(dbus-launch)\
+
+XDG_CURRENT_DESKTOP=GNOME obsidian --password-store=gnome-libsecret\
+
+XDG_CURRENT_DESKTOP=GNOME obsidian.appimage --password-store=gnome-libsecret
+rm -rf .config/obsidian
+cd zsh
+yay xwayland-satellite
+yay xdg-desktop-portal-gtk
+yay xdg-desktop-portal-gnome
+yay dms-shell-bin
+yay dms-shell
+yay matugen
+yay cava
+systemctl --user status niri.service
+ls -l ~/.config
+ls -l ~/.config/systemd/user/niri.service.wants
+v /tmp/OUOavIMxYshySt1Yn5CXkw/screen.txt
+v zprofile
+yay -S xdg-desktop-portal-gnome nautilus
+yay qt6-multimedia-ffmpeg
+yay -S v /tmp/5QojMGkTWLFEj6UbEMPrfw/screen.txt
+v /tmp/hHokEvfZjdK65GjNX5Fj5Q/screen.txt
+yay -S cava qt6-multimedia-ffmpeg
+dms doctor
+obsidian.appimage --ozone-platform=wayland
+ps aux | grep gnome-keyring
+secret-tool lookup
+v /tmp/5If73BOba0B3-aWZJsDPMg/screen.txt
+cd /run/user/1000/keyring
+echo $DBUS_SESSION_BUS_ADDRESS
+obsidian.appimage
+export GNOME_KEYRING_CONTROL=/run/user/1000/keyring
+source .zshenv
 q
-: 1776255847:0;cd dms
-: 1776255849:0;l
-: 1776255852:0;v binds.kdl
-: 1776256089:0;cd dot
-: 1776256092:0;la
-: 1776256102:0;v .gitignore
-: 1776256246:0;cd config/niri/dms
-: 1776256247:0;l
-: 1776256280:0;v /tmp/blqU_gTDLEQmyzn3JlGFPA/screen.txt
-: 1776256329:0;cd ghos
-: 1776256333:0;cat config
-: 1776256516:0;cd dms
-: 1776256519:0;v
-: 1776256559:0;fzf --preview
-: 1776256563:0;fzf --preview=cat
-: 1776256573:0;v
-: 1776256595:0;git status
-: 1776256661:0;git add .
-: 1776256669:0;git status
-: 1776256719:0;git commit -m "Add git config"
-: 1776256727:0;git push -u origin master
-: 1776256836:0;v
-: 1776256858:0;git reset config/niri/dms/alttab.kdl config/niri/dms/colors.kdl config/niri/dms/cursor.kdl config/niri/dms/layout.kdl config/niri/dms/wpblur.kdl
-: 1776256868:0;git status
-: 1776256883:0;git push -u origin master
-: 1776256902:0;git status
-: 1776257060:0;git rm --cached config/niri/dms/alttab.kdl config/niri/dms/colors.kdl config/niri/dms/cursor.kdl config/niri/dms/layout.kdl config/niri/dms/wpblur.kdl
-: 1776257064:0;git status
-: 1776257071:0;git add .
+echo $GNOME-KEYRING-CONTROL
+v /tmp/FO1DeDMuNZwb1GR6rHvBDQ/screen.txt
+obsidian.appimage --password-store=gnome-libsecret %u
+cd .config/obsidian
+cd Local\ Storage
+cd leveldb
+v /tmp/J1Je2sIZ6caGzUCPsdkVlA/screen.txt
+cd app
+v obsidian.desktop
+secret-tool search application obsidian
+secret-tool search application chrome
+adguardvpn-cli connect -l Denmark
+adguardvpn-cli connect -l Berlin
+adguardvpn-cli connect -l Finland
+v .zshenv
+ls
+niri msg windows
+v /tmp/whq9vDv4tqOFqLNtv1Kuog/screen.txt
+cd niri
+v config.kdl
+pi
+cd
+v --version
+l
+flatpak update
+cd neovim
+git fetch
+git status
+git pull
+zig build -Doptimize=ReleaseFast install --prefix ~/.local
+v
+poweroff
+cd dot
+cd misc
+la
+mkdir wallpapers
+mv ~/Pictures/10-14-Night.jpg wallpapers
+adguardvpn-cli status
+ping ya.ru
+adguardvpn-cli update
+adguardvpn-cli connect -f
+adguardvpn-cli list-locations 10
+adguardvpn-cli connect -l Sweden
+adguardvpn-cli disconnect
+upgrade
+reboot
+: 1776600850:0;v
+: 1776600976:0;top
+: 1776601007:0;top | rg nvim
+: 1776601037:0;yay htop
+: 1776601063:0;htop
+: 1776601215:0;adguardvpn-cli list-locations 10
+: 1776602898:0;ping ya.ru
+: 1776606355:0;adguardvpn-cli list-locations 10
+: 1776606361:0;adguardvpn-cli connect -f
+: 1776606876:0;adguardvpn-cli disconnect
+: 1776612970:0;adguardvpn-cli list-locations 10
+: 1776612977:0;adguardvpn-cli connect -l Denmark
+: 1776618755:0;adguardvpn-cli disconnect
+: 1776651811:0;adguardvpn-cli connect -f
+: 1776652869:0;adguardvpn-cli disconnect
+: 1776652873:0;v
+: 1776652946:0;la
+: 1776652957:0;la .gnupg
+: 1776652968:0;upgrade
+: 1776668516:0;adguardvpn-cli list-locations 10
+: 1776668522:0;adguardvpn-cli connect -f
+: 1776670606:0;adguardvpn-cli disconnect
+: 1776670610:0;cd neovim
+: 1776670614:0;git fetch
+: 1776670622:0;git status
+: 1776670627:0;cd
+: 1776670637:0;upgrade
+: 1776670770:0;v
+: 1776670782:0;reboot
+: 1776671612:0;v
+: 1776671733:0;adguardvpn-cli list-locations 10
+: 1776671740:0;adguardvpn-cli connect -f
+: 1776671750:0;l
+: 1776671751:0;la
+: 1776675724:0;v
+: 1776677000:0;adguardvpn-cli disconnect
+: 1776677907:0;adguardvpn-cli connect -f
+: 1776680178:0;v .ssh/config
+: 1776680204:0;la
+: 1776680207:0;cd .ssh
+: 1776680208:0;la
+: 1776680213:0;v
+: 1776680244:0;cd dot
+: 1776680246:0;la
+: 1776680251:0;git status
+: 1776680270:0;cd zsh
+: 1776680273:0;v .zshrc
+: 1776680302:0;cd
+: 1776680305:0;v .zshenv
+: 1776680353:0;git add config/zsh/*
+: 1776680370:0;git status
+: 1776680422:0;git add config/zsh/.zcompdump config/zsh/history
