@@ -79,6 +79,16 @@ autocmd("TextYankPost", {
 	end,
 })
 
+-- Tab config for go filetypes
+autocmd("FileType", {
+	pattern = "go",
+	callback = function()
+		vim.opt_local.tabstop = 4
+		vim.opt_local.shiftwidth = 4
+		vim.opt_local.expandtab = false
+	end,
+})
+
 -- Disable line numbers for some filetypes
 -- autocmd("FileType", {
 -- 	group = augroup("disable_numbers"),
