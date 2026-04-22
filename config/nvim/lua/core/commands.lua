@@ -79,13 +79,16 @@ autocmd("TextYankPost", {
 	end,
 })
 
--- Tab config for go filetypes
+-- Config for go filetypes
 autocmd("FileType", {
 	pattern = "go",
 	callback = function()
 		vim.opt_local.tabstop = 4
 		vim.opt_local.shiftwidth = 4
 		vim.opt_local.expandtab = false
+		-- Delete keymaps because treesitter-textobjects conflict
+		pcall(vim.keymap.del, "n", "]]", { buffer = true })
+		pcall(vim.keymap.del, "n", "[[", { buffer = true })
 	end,
 })
 
