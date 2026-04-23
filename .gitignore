@@ -1,4 +1,5 @@
 config/zsh/secrets
+config/zsh/history
 config/git/.config
 config/niri/dms/alttab.kdl
 config/niri/dms/colors.kdl
