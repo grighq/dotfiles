@@ -1,5 +1,6 @@
 -- Parsers
 require("nvim-treesitter").install({
+	"zsh",
 	"rust",
 	"javascript",
 	"zig",
@@ -24,7 +25,7 @@ require("nvim-treesitter").install({
 	"bash",
 })
 
---- Highlight for installed parsers
+-- Highlight for installed parsers
 vim.api.nvim_create_autocmd("FileType", {
 	callback = function(args)
 		local lang = vim.treesitter.language.get_lang(vim.bo[args.buf].filetype) or vim.bo[args.buf].filetype
