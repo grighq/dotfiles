@@ -4,10 +4,7 @@ local hooks = function(ev)
 
 	-- Build fuzzy matcher for blink.cmp(rust toolchain needed)
 	if name == "blink.cmp" and (kind == "install" or kind == "update") then
-		if not ev.data.active then
-			vim.cmd.packadd("blink.cmp")
-			vim.cmd.packadd("blink.lib")
-		end
+		vim.cmd.packadd("blink.cmp")
 		require("blink.cmp").build():wait(60000)
 	end
 
