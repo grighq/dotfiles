@@ -1,10 +1,16 @@
 -- Intsall/update hooks
 local hooks = function(ev)
 	local name, kind = ev.data.spec.name, ev.data.kind
+
 	-- Build fuzzy matcher for blink.cmp(rust toolchain needed)
 	if name == "blink.cmp" and (kind == "install" or kind == "update") then
-		vim.system({ "cargo", "build", "--release" }, { cwd = ev.data.path }):wait()
+		if not ev.data.active then
+			vim.cmd.packadd("blink.cmp")
+			vim.cmd.packadd("blink.lib")
+		end
+		require("blink.cmp").build():wait(60000)
 	end
+
 	-- Auto update treesitter parsers
 	if name == "nvim-treesitter" and kind == "update" then
 		if not ev.data.active then
@@ -31,6 +37,7 @@ vim.pack.add({
 	"https://github.com/ibhagwan/fzf-lua",
 	"https://github.com/folke/which-key.nvim",
 	-- Coding
+	"https://github.com/saghen/blink.lib",
 	"https://github.com/saghen/blink.cmp",
 	"https://github.com/windwp/nvim-autopairs",
 	"https://github.com/rafamadriz/friendly-snippets",
@@ -40,8 +47,8 @@ vim.pack.add({
 })
 
 -- Setup
+require("plugins.treesitter")
 require("plugins.ui")
 require("plugins.lsp")
 require("plugins.editor")
 require("plugins.coding")
-require("plugins.treesitter")
