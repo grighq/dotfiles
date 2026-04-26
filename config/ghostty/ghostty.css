@@ -3,56 +3,61 @@ tabbar * {
 }
 
 tabbar {
-  background-color: #191B29; 
+  /* background-color: #191B29; */
+  background-color: #222436;
 }
 
 tabbar tabbox {
   margin: 0;
-  padding: 0;
+  /* padding: 0; */
+  padding-top: 4px;
+  padding-bottom: 2px;
   min-height: 0;
 }
 
 tabbox tab {
-  padding: 4px;
+  /* padding: 4px; */
   min-height: 0;
 }
 
 tabbox tab label {
   color: #c0caf5;
-  font-size: 15px; 
+  font-size: 15px;
   font-family: "Inter",  sans-serif;
 }
 
-tabbox tab:selected label { 
+tabbox tab:selected label {
   /* color: #c0caf5; */
 }
 
 tabbar tab:selected {
-  /* border-radius: 8px; */
-}  
+  border-radius: 8px;
+  /* border-left-color: red; */
+}
 
-tabbox tab:selected { 
-  background-color: #222436;
+tabbox tab:selected {
+  /* background-color: #222436; */
+  background-color: #191B29;
 }
 
 tabbar separator {
   background-color: #191B29;
 }
 
-tabbox tab:hover { 
+tabbox tab:hover {
   background-color: #191B29;
 }
 
-tabbox tab:hover label { 
+tabbox tab:hover label {
   color: #82aaff;
 }
 
 tabbar tab:hover {
-  /* border-radius: 8px; */
-}  
+  border-radius: 8px;
+}
 
-tabbox tab:active { 
-  background-color: #2f334d; 
+tabbox tab:active {
+  background-color: #2f334d;
 }
 
 .raised.top-bar {
