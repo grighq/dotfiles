@@ -46,8 +46,8 @@ map("c", "<c-l>", "<right>")
 map("c", "<c-b>", "<s-left>")
 
 -- Usefull motion in insert mode
-map("i", "<c-h>", "<left>", { silent = true })
-map("i", "<c-l>", "<right>", { silent = true })
+-- map("i", "<c-h>", "<left>", { silent = true })
+map("i", "<c-f>", "<right>", { silent = true })
 
 -- Navigation
 map("n", "<c-h>", "<c-w>h")
