@@ -49,7 +49,6 @@ npm() {
   npm "$@"
 }
 
-# Pi agent
 # Load nvm, if not loading(lazy load, see above) for start pi agent
 pi() {
   if [[ -z "$NVM_BIN" ]]; then
@@ -58,6 +57,14 @@ pi() {
   command pi "$@"
 }
 export PI_CODING_AGENT_DIR="$XDG_CONFIG_HOME/pi"
+
+# Load nvm, if not loading(lazy load, see above) for start opencode agent
+oc() {
+  if [[ -z "$NVM_BIN" ]]; then
+    source "$NVM_DIR/nvm.sh"
+  fi
+  command oc "$@"
+}
 
 # Set up fzf key bindings and fuzzy completion
 export FZF_DEFAULT_OPTS_FILE="$XDG_CONFIG_HOME/fzfrc"
