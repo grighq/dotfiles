@@ -1,13 +1,11 @@
 config-notification {
     disable-failed
 }
-
 gestures {
     hot-corners {
         off
     }
 }
-
 input {
     keyboard {
         xkb {
@@ -17,71 +15,33 @@ input {
         numlock
     }
     touchpad {
-        // off
         tap
-        // dwt
-        // dwtp
-        // drag false
-        // drag-lock
         natural-scroll
-        // accel-speed 0.2
-        // accel-profile "flat"
-        // scroll-method "two-finger"
-        // disabled-on-external-mouse
     }
-
     mouse {
-        // off
-        // natural-scroll
-        // accel-speed 0.2
-        // accel-profile "flat"
-        // scroll-method "no-scroll"
-    }
 
+    }
     trackpoint {
-        // off
-        // natural-scroll
-        // accel-speed 0.2
-        // accel-profile "flat"
-        // scroll-method "on-button-down"
-        // scroll-button 273
-        // scroll-button-lock
-        // middle-emulation
+
     }
-    // warp-mouse-to-focus
-    // focus-follows-mouse max-scroll-amount="0%"
 }
-
-/-output "eDP-2" {
-    mode "2560x1600@239.998993"
-    position x=2560 y=0
-    variable-refresh-rate
-}
-
 layout {
     background-color "transparent"
-    // When to center a column when changing focus, options are:
-    // - "never", default behavior, focusing an off-screen column will keep at the left
-    //   or right edge of the screen.
-    // - "always", the focused column will always be centered.
-    // - "on-overflow", focusing a column will center it if it doesn't fit
-    //   together with the previously focused column.
     center-focused-column "never"
-    // You can customize the widths that "switch-preset-column-width" (Mod+R) toggles between.
     preset-column-widths {
         proportion 0.33333
         proportion 0.5
         proportion 0.66667
     }
-    // preset-window-heights { }
-    default-column-width { proportion 0.5; }
-    // `draw-border-with-background`.
+    default-column-width {
+        proportion 0.5
+    }
     border {
         off
         width 4
-        active-color   "#707070"
+        active-color "#707070"
         inactive-color "#d0d0d0"
-        urgent-color   "#cc4444"
+        urgent-color "#cc4444"
     }
     shadow {
         softness 30
@@ -90,6 +50,7 @@ layout {
         color "#0007"
     }
     struts {
+
     }
 }
 layer-rule {
@@ -101,24 +62,18 @@ overview {
         off
     }
 }
-
 spawn-at-startup "vicinae" "server"
-
 environment {
-  XDG_CURRENT_DESKTOP "niri"
+    XDG_CURRENT_DESKTOP "niri"
 }
-
 hotkey-overlay {
     skip-at-startup
 }
-
 prefer-no-csd
-
 screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
-
 animations {
     workspace-switch {
-        spring damping-ratio=0.80 stiffness=523 epsilon=0.0001
+        spring damping-ratio=0.8 stiffness=523 epsilon=0.0001
     }
     window-open {
         duration-ms 150
@@ -148,7 +103,6 @@ animations {
         spring damping-ratio=0.85 stiffness=800 epsilon=0.0001
     }
 }
-
 window-rule {
     match app-id="cursor"
     match app-id="obsidian"
@@ -159,78 +113,80 @@ window-rule {
     match app-id="com.mitchellh.ghostty"
     open-maximized true
 }
-
 window-rule {
-    match app-id=r#"^org\.wezfurlong\.wezterm$"#
-    default-column-width {}
+    match app-id="^org\\.wezfurlong\\.wezterm$"
+    default-column-width {
+
+    }
 }
-
 window-rule {
-    match app-id=r#"^org\.gnome\."#
+    match app-id="^org\\.gnome\\."
     draw-border-with-background false
     geometry-corner-radius 12
     clip-to-geometry true
 }
-
 window-rule {
-    match app-id=r#"^gnome-control-center$"#
-    match app-id=r#"^pavucontrol$"#
-    match app-id=r#"^nm-connection-editor$"#
-    default-column-width { proportion 0.5; }
+    match app-id="^gnome-control-center$"
+    match app-id="^pavucontrol$"
+    match app-id="^nm-connection-editor$"
+    default-column-width {
+        proportion 0.5
+    }
     open-floating false
 }
-
 window-rule {
-    match app-id=r#"^gnome-calculator$"#
-    match app-id=r#"^galculator$"#
-    match app-id=r#"^blueman-manager$"#
-    match app-id=r#"^org\.gnome\.Nautilus$"#
-    match app-id=r#"^xdg-desktop-portal$"#
+    match app-id="^gnome-calculator$"
+    match app-id="^galculator$"
+    match app-id="^blueman-manager$"
+    match app-id="^org\\.gnome\\.Nautilus$"
+    match app-id="^xdg-desktop-portal$"
     open-floating true
 }
-
 window-rule {
-    match app-id=r#"^steam$"# title=r#"^notificationtoasts_\d+_desktop$"#
+    match app-id="^steam$" title="^notificationtoasts_\\d+_desktop$"
     default-floating-position x=10 y=10 relative-to="bottom-right"
     open-focused false
 }
-
 window-rule {
-    match app-id=r#"^org\.wezfurlong\.wezterm$"#
+    match app-id="^org\\.wezfurlong\\.wezterm$"
     match app-id="Alacritty"
     match app-id="zen"
     match app-id="com.mitchellh.ghostty"
     match app-id="kitty"
     draw-border-with-background false
 }
-
 window-rule {
-    match app-id=r#"firefox$"# title="^Picture-in-Picture$"
+    match app-id="firefox$" title="^Picture-in-Picture$"
     match app-id="zoom"
     open-floating true
 }
-
 window-rule {
-    match app-id=r#"org.quickshell$"#
+    match app-id="org.quickshell$"
     open-floating true
 }
-
 debug {
     honor-xdg-activation-with-invalid-serial
 }
-
 recent-windows {
     binds {
-        Alt+Tab         { next-window scope="output"; }
-        Alt+Shift+Tab   { previous-window scope="output"; }
-        Alt+grave       { next-window filter="app-id"; }
-        Alt+Shift+grave { previous-window filter="app-id"; }
+        Alt+Tab {
+            next-window scope="output"
+        }
+        Alt+Shift+Tab {
+            previous-window scope="output"
+        }
+        Alt+grave {
+            next-window filter="app-id"
+        }
+        Alt+Shift+grave {
+            previous-window filter="app-id"
+        }
     }
 }
-
 include "dms/colors.kdl"
 include "dms/layout.kdl"
 include "dms/alttab.kdl"
 include "dms/binds.kdl"
 include "dms/outputs.kdl"
 include "dms/cursor.kdl"
+
