@@ -73,6 +73,7 @@ require("conform").setup({
 		typescriptreact = { "prettier" },
 		svelte = { "prettier" },
 		css = { "prettier" },
+		kdl = { "kdlfmt" },
 		html = { "prettier" },
 		yaml = { "prettier" },
 		markdown = { "prettier" },
