@@ -123,3 +123,6 @@ ZSH_HIGHLIGHT_STYLES[path]='none'
 
 # Delete duplicates from $PATH
 typeset -U PATH
+
+# bun completions
+[ -s "/home/griga/.local/share/bun/_bun" ] && source "/home/griga/.local/share/bun/_bun"
