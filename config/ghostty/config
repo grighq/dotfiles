@@ -37,10 +37,10 @@ keybind = shift+space>v=paste_from_clipboard
 
 keybind = shift+space>ctrl+v=new_split:right
 keybind = shift+space>ctrl+s=new_split:down
-keybind = shift+space>ctrl+j=goto_split:down
-keybind = shift+space>ctrl+k=goto_split:up
-keybind = shift+space>ctrl+l=goto_split:right
-keybind = shift+space>ctrl+h=goto_split:left
+keybind = shift+space>j=goto_split:down
+keybind = shift+space>k=goto_split:up
+keybind = shift+space>l=goto_split:right
+keybind = shift+space>h=goto_split:left
 
 
 keybind = ctrl+tab=next_tab
