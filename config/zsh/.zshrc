@@ -49,13 +49,14 @@ npm() {
   npm "$@"
 }
 
-# Load nvm, if not loading(lazy load, see above) for start pi agent
+# Load nvm(from lazy load, see above) for start pi agent
 pi() {
   if [[ -z "$NVM_BIN" ]]; then
     source "$NVM_DIR/nvm.sh"
   fi
   command pi "$@"
 }
+
 export PI_CODING_AGENT_DIR="$XDG_CONFIG_HOME/pi"
 
 # Set up fzf key bindings and fuzzy completion
@@ -107,6 +108,3 @@ ZSH_HIGHLIGHT_STYLES[path]='none'
 
 # Delete duplicates from $PATH
 typeset -U PATH
-
-# bun completions
-[ -s "/home/griga/.local/share/bun/_bun" ] && source "/home/griga/.local/share/bun/_bun"

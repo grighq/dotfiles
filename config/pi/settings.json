@@ -1,7 +1,7 @@
 {
   "lastChangelogVersion": "0.72.1",
-  "defaultProvider": "nvidia-nim",
-  "defaultModel": "deepseek-ai/deepseek-v4-flash",
+  "defaultProvider": "openrouter",
+  "defaultModel": "minimax/minimax-m2.5:free",
   "defaultThinkingLevel": "medium",
   "hideThinkingBlock": false,
   "packages": [
