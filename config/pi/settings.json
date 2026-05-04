@@ -1,7 +1,7 @@
 {
-  "lastChangelogVersion": "0.67.68",
+  "lastChangelogVersion": "0.72.1",
   "defaultProvider": "nvidia-nim",
-  "defaultModel": "moonshotai/kimi-k2.5",
+  "defaultModel": "deepseek-ai/deepseek-v4-flash",
   "defaultThinkingLevel": "medium",
   "hideThinkingBlock": false,
   "packages": [
