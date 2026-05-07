@@ -2,6 +2,16 @@
 local hooks = function(ev)
 	local name, kind = ev.data.spec.name, ev.data.kind
 
+	if name == "telescope-fzf-native.nvim" and (kind == "install" or kind == "update") then
+		vim.system({ "make" }, { cwd = ev.data.path }, function(obj)
+			if obj.code == 0 then
+				vim.schedule(function()
+					print("fzf-native built successfully")
+				end)
+			end
+		end)
+	end
+
 	-- Build fuzzy matcher for blink.cmp(rust toolchain needed)
 	if name == "blink.cmp" and (kind == "install" or kind == "update") then
 		if not ev.data.active then
@@ -33,8 +43,10 @@ vim.pack.add({
 	"https://github.com/neovim/nvim-lspconfig",
 	"https://github.com/mason-org/mason-lspconfig.nvim",
 	-- Editor
-	"https://github.com/ibhagwan/fzf-lua",
 	"https://github.com/folke/which-key.nvim",
+	"https://github.com/nvim-lua/plenary.nvim",
+	"https://github.com/nvim-telescope/telescope.nvim",
+	"https://github.com/nvim-telescope/telescope-fzf-native.nvim",
 	-- Coding
 	"https://github.com/saghen/blink.lib",
 	"https://github.com/saghen/blink.cmp",

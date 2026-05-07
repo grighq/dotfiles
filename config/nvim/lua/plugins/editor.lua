@@ -1,64 +1,40 @@
--- Fzf-lua
-require("fzf-lua").setup({
-	globals = {
-		autoclose = true,
-	},
-	winopts = {
-		preview = {
-			scrollbar = false,
+-- Telescope
+require("telescope").setup({
+	defaults = {
+		sorting_strategy = "ascending",
+		layout_config = {
+			prompt_position = "top",
 		},
-	},
-	fzf_opts = {
-		["--padding"] = "0,0,0,1",
-	},
-	files = {
-		cwd_prompt = false,
-		winopts = { title_flags = false },
+		prompt_prefix = " ",
+		selection_caret = " ",
+		mappings = {
+			i = {
+				-- ["<esc>"] = require("telescope.actions").close,
+				["<tab>"] = require("telescope.actions").move_selection_next,
+				["<s-tab>"] = require("telescope.actions").move_selection_previous,
+				["<c-space>"] = require("telescope.actions").toggle_selection,
+			},
+		},
 	},
 })
 
---- Keymaps
-vim.keymap.set("n", "<leader>sf", function()
-	require("fzf-lua").files()
-end, { desc = "Files in cwd" })
-
-vim.keymap.set("n", "<leader>sg", function()
-	require("fzf-lua").live_grep()
-end, { desc = "Grep in cwd" })
-
 vim.keymap.set("n", "<leader>sc", function()
-	require("fzf-lua").files({ cwd = vim.fn.stdpath("config") })
-end, { desc = "Files nvim config" })
+	require("telescope.builtin").find_files({ cwd = vim.fn.stdpath("config") })
+end, { desc = "Telescope neovim config" })
 
-vim.keymap.set("n", "<leader>sb", function()
-	require("fzf-lua").buffers()
-end, { desc = "Buffers" })
+vim.keymap.set("n", "<leader>sb", require("telescope.builtin").buffers, { desc = "Telescope buffers" })
+vim.keymap.set("n", "<leader>sg", require("telescope.builtin").live_grep, { desc = "Telescope live grep" })
+vim.keymap.set("n", "<leader>sh", require("telescope.builtin").help_tags, { desc = "Telescope help tags" })
+vim.keymap.set("n", "<leader>sf", require("telescope.builtin").find_files, { desc = "Telescope find files" })
+vim.keymap.set("n", "<leader>sd", require("telescope.builtin").diagnostics, { desc = "Telescope diagnostics" })
 
-vim.keymap.set("n", "<leader>sw", function()
-	require("fzf-lua").grep_cword()
-end, { desc = "Current word" })
-
-vim.keymap.set("n", "<leader>sr", function()
-	require("fzf-lua").resume()
-end, { desc = "Resume" })
-
-vim.keymap.set("n", "<leader>sd", function()
-	require("fzf-lua").diagnostics_document()
-end, { desc = "Diagnostics" })
-
-vim.keymap.set("n", "<leader>so", function()
-	require("fzf-lua").old_files()
-end, { desc = "Old files" })
-
-vim.keymap.set("n", "<leader>sh", function()
-	require("fzf-lua").command_history()
-end, { desc = "Command history" })
+require("telescope").load_extension("fzf")
 
 -- Which-key
 require("which-key").setup({
 	preset = "helix",
 	spec = {
-		{ "<leader>s", group = "Find" },
+		{ "<leader>s", group = "Telescope" },
 	},
 	win = {
 		title_pos = "center",
