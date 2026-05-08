@@ -23,6 +23,7 @@ vim.keymap.set("n", "<leader>sc", function()
 end, { desc = "Telescope neovim config" })
 
 vim.keymap.set("n", "<leader>sb", require("telescope.builtin").buffers, { desc = "Telescope buffers" })
+vim.keymap.set("n", "<leader>st", require("telescope.builtin").builtin, { desc = "Telescope all pickers" })
 vim.keymap.set("n", "<leader>sg", require("telescope.builtin").live_grep, { desc = "Telescope live grep" })
 vim.keymap.set("n", "<leader>sh", require("telescope.builtin").help_tags, { desc = "Telescope help tags" })
 vim.keymap.set("n", "<leader>sf", require("telescope.builtin").find_files, { desc = "Telescope find files" })

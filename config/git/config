@@ -11,3 +11,6 @@
   default = current
 [help]
   autocorrect = 20
+[credential "https://git.sourcecraft.dev"]
+	helper = 
+	helper = !'/home/griga/sourcecraft/bin/src' auth git-credential
