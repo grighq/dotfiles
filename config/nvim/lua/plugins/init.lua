@@ -43,6 +43,7 @@ vim.pack.add({
 	"https://github.com/neovim/nvim-lspconfig",
 	"https://github.com/mason-org/mason-lspconfig.nvim",
 	-- Editor
+	"https://github.com/neogitorg/neogit",
 	"https://github.com/folke/which-key.nvim",
 	"https://github.com/nvim-lua/plenary.nvim",
 	"https://github.com/nvim-telescope/telescope.nvim",

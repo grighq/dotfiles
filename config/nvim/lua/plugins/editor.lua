@@ -31,6 +31,11 @@ vim.keymap.set("n", "<leader>sd", require("telescope.builtin").diagnostics, { de
 
 require("telescope").load_extension("fzf")
 
+-- Neogit
+require("neogit").setup({})
+
+vim.keymap.set("n", "<leader>gg", "<cmd>Neogit<cr>", { desc = "Open Neogit UI" })
+
 -- Which-key
 require("which-key").setup({
 	preset = "helix",
