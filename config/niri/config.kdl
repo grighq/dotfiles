@@ -109,7 +109,6 @@ window-rule {
     match app-id="obsidian"
     match app-id="Alacritty"
     match app-id="google-chrome"
-    // match app-id="org.gnome.Nautilus"
     match app-id="brave-origin-nightly"
     match app-id="org.telegram.desktop"
     match app-id="com.mitchellh.ghostty"
