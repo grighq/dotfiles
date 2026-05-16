@@ -105,6 +105,7 @@ animations {
 }
 window-rule {
     match app-id="cursor"
+    match app-id="helium"
     match app-id="chromium"
     match app-id="obsidian"
     match app-id="Alacritty"
