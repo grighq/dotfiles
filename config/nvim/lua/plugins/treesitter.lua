@@ -13,6 +13,7 @@ require("nvim-treesitter").install({
 	"gosum",
 	"markdown",
 	"markdown_inline",
+	"kdl",
 	"git_config",
 	"git_rebase",
 	"gitcommit",
@@ -26,12 +27,35 @@ require("nvim-treesitter").install({
 })
 
 -- Highlight for installed parsers
+-- vim.api.nvim_create_autocmd("FileType", {
+-- 	callback = function(args)
+-- 		local lang = vim.treesitter.language.get_lang(vim.bo[args.buf].filetype) or vim.bo[args.buf].filetype
+-- 		local is_installed = #vim.api.nvim_get_runtime_file("parser/" .. lang .. ".*", false) > 0
+-- 		if is_installed then
+-- 			vim.treesitter.start(args.buf, lang)
+-- 		end
+-- 	end,
+-- })
+
 vim.api.nvim_create_autocmd("FileType", {
 	callback = function(args)
-		local lang = vim.treesitter.language.get_lang(vim.bo[args.buf].filetype) or vim.bo[args.buf].filetype
+		local bufnr = args.buf
+
+		if not vim.api.nvim_buf_is_valid(bufnr) or vim.bo[bufnr].buftype ~= "" then
+			return
+		end
+
+		local ft = vim.bo[bufnr].filetype
+		if ft == "" then
+			return
+		end
+
+		local lang = vim.treesitter.language.get_lang(ft) or ft
+
 		local is_installed = #vim.api.nvim_get_runtime_file("parser/" .. lang .. ".*", false) > 0
+
 		if is_installed then
-			vim.treesitter.start(args.buf, lang)
+			pcall(vim.treesitter.start, bufnr, lang)
 		end
 	end,
 })
