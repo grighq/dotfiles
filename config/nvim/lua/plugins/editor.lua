@@ -1,9 +1,15 @@
 -- fff
 require("fff").setup({
-	prompt = " ",
+	prompt = "  ",
 	layout = {
 		show_scrollbar = false,
 		prompt_position = "top",
+	},
+	keymaps = {
+		move_down = { "<tab>" },
+		move_up = { "<s-tab>" },
+		toggle_select = { "<c-j>" },
+		cycle_grep_modes = { "<c-f>" },
 	},
 })
 
