@@ -66,8 +66,5 @@ map("t", "<c-j>", "<c-\\><c-n><c-w>j")
 map("t", "<c-k>", "<c-\\><c-n><c-w>k")
 map("t", "<c-l>", "<c-\\><c-n><c-w>l")
 
--- Delete buffer
-map("n", "<leader>bd", "<cmd>:bd<cr>")
-
 -- Quit
 map("n", "<leader>qq", "<cmd>qa<cr>")
