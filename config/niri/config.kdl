@@ -49,9 +49,6 @@ layout {
         offset x=0 y=5
         color "#0007"
     }
-    struts {
-
-    }
 }
 layer-rule {
     match namespace="^quickshell$"
