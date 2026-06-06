@@ -7,7 +7,7 @@ local hooks = function(ev)
 		if not ev.data.active then
 			vim.cmd.packadd("blink.cmp")
 		end
-		require("blink.cmp").build():wait(60000)
+		require("blink.cmp").build():pwait()
 	end
 
 	-- Auto update treesitter parsers
