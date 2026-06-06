@@ -21,18 +21,19 @@
          "name": "gruvbox-dark"
       }
    },
+   "telemetry": {
+      "system_info": false
+   },
+   "launcher_window": {
+      "client_side_decorations": {
+         "enabled": true
+      }
+   },
    "keybinds": {},
    "providers": {
       "@dagimg-dot/store.vicinae.wifi-commander": {
          "preferences": {
             "network-cli-tool": "iwctl"
-         }
-      },
-      "@system7/store.vicinae.keepassxc": {
-         "preferences": {
-            "database": "/home/griga/Documents/grigdb.kdbx",
-            "lockAfterInactivity": "5",
-            "userInterfaceFavicon": false
          }
       }
    }
