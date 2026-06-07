@@ -32,32 +32,23 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 # Bun completions
 [[ -s "$BUN_INSTALL/_bun" ]] && source "$BUN_INSTALL/_bun"
 
-# Lazy load for nvm, node, npm
-nvm() {
+# Lazy load for nvm/node/npm
+nvm node npm() {
   unset -f nvm node npm
   [[ -s "$NVM_DIR/nvm.sh" ]] && source "$NVM_DIR/nvm.sh"
-  nvm "$@"
-}
-node() {
-  unset -f nvm node npm
-  [[ -s "$NVM_DIR/nvm.sh" ]] && source "$NVM_DIR/nvm.sh"
-  node "$@"
-}
-npm() {
-  unset -f nvm node npm
-  [[ -s "$NVM_DIR/nvm.sh" ]] && source "$NVM_DIR/nvm.sh"
-  npm "$@"
+  "$0" "$@"
 }
 
-# Load nvm(from lazy load, see above) for start pi agent
-pi() {
+# Lazy load nvm/node/npm for opencode start
+opencode() {
   if [[ -z "$NVM_BIN" ]]; then
-    source "$NVM_DIR/nvm.sh"
+    [[ -s "$NVM_DIR/nvm.sh" ]] && source "$NVM_DIR/nvm.sh"
   fi
-  command pi "$@"
-}
 
-export PI_CODING_AGENT_DIR="$XDG_CONFIG_HOME/pi"
+  unset -f opencode
+
+  command opencode "$@"
+}
 
 # Wget
 export WGETRC="$XDG_CONFIG_HOME/wget/wgetrc"
@@ -67,8 +58,8 @@ export FZF_DEFAULT_OPTS_FILE="$XDG_CONFIG_HOME/fzfrc"
 source <(fzf --zsh)
 
 # Init some utilities
-eval "$(zoxide init zsh --cmd cd)"
 eval "$(starship init zsh)"
+eval "$(zoxide init zsh --cmd cd)"
 
 # Load aliases
 source "$ZDOTDIR/aliases"
