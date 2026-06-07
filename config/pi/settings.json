@@ -1,8 +1,0 @@
-{
-  "lastChangelogVersion": "0.74.0",
-  "defaultProvider": "deepseek",
-  "defaultModel": "deepseek-v4-flash",
-  "defaultThinkingLevel": "xhigh",
-  "hideThinkingBlock": false,
-  "theme": "Tokyo Night Moon"
-}
