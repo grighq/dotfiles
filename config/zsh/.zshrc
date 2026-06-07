@@ -15,6 +15,7 @@ setopt HIST_IGNORE_SPACE
 setopt HIST_SAVE_NO_DUPS
 setopt HIST_REDUCE_BLANKS
 setopt HIST_IGNORE_ALL_DUPS
+setopt AUTO_CD
 
 # Zsh completion
 autoload -Uz compinit

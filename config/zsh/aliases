@@ -1,6 +1,5 @@
 alias q='exit'
 alias v='nvim'
-alias ..='cd ..'
 alias oc='opencode'
 alias upgrade='yay -Syu'
 
