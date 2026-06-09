@@ -36,6 +36,10 @@ vim.pack.add({
 	"https://github.com/neogitorg/neogit",
 	"https://github.com/folke/snacks.nvim",
 	"https://github.com/folke/which-key.nvim",
+	{
+		src = "https://github.com/kylechui/nvim-surround",
+		version = vim.version.range("4.x"),
+	},
 	-- Coding
 	"https://github.com/saghen/blink.lib",
 	"https://github.com/saghen/blink.cmp",

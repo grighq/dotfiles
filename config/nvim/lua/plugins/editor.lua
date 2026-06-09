@@ -84,6 +84,9 @@ require("neogit").setup({})
 
 map("n", "<leader>gg", "<cmd>Neogit<cr>", { desc = "Open Neogit UI" })
 
+-- Nvim-surroung
+require("nvim-surround").setup()
+
 -- Which-key
 require("which-key").setup({
 	preset = "helix",
